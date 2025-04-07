@@ -46,7 +46,7 @@ void ApplyLibraryOverrides::onLibraryOverrideDownloadFinished()
     auto root = doc.object();
     auto overrides = root["overrides"].toObject();
 
-    for (const auto library : m_instance->getPackProfile()->getProfile()->getLibraries()) {
+    for (const auto &library : m_instance->getPackProfile()->getProfile()->getLibraries()) {
         const QString& artifact = library->artifactPrefix();
         const bool isAuthlib = artifact == "com.mojang:authlib";
 
