@@ -36,7 +36,7 @@ void ApplyLibraryOverrides::onLibraryOverrideDownloadFinished()
     }
 
     QJsonParseError jsonError;
-    QJsonDocument doc = QJsonDocument::fromJson(*m_response, &jsonError);
+    const QJsonDocument doc = QJsonDocument::fromJson(*m_response, &jsonError);
     if (jsonError.error) {
         emitFailed("Failed to parse EPL metadata.");
         return;
@@ -46,9 +46,9 @@ void ApplyLibraryOverrides::onLibraryOverrideDownloadFinished()
     auto root = doc.object();
     auto overrides = root["overrides"].toObject();
 
-    for (auto library : m_instance->getPackProfile()->getProfile()->getLibraries()) {
+    for (const auto library : m_instance->getPackProfile()->getProfile()->getLibraries()) {
         const QString& artifact = library->artifactPrefix();
-        bool isAuthlib = artifact == "com.mojang:authlib";
+        const bool isAuthlib = artifact == "com.mojang:authlib";
 
         auto artifactRef = overrides[artifact];
         if (!artifactRef.isObject()) {
@@ -71,7 +71,7 @@ void ApplyLibraryOverrides::onLibraryOverrideDownloadFinished()
         newDownloadInfo->sha1 = override["sha1"].toString();
         newDownloadInfo->size = override["size"].toInt();
 
-        auto newLibraryInfo = std::make_shared<MojangLibraryDownloadInfo>(newDownloadInfo);
+        const auto newLibraryInfo = std::make_shared<MojangLibraryDownloadInfo>(newDownloadInfo);
 
         library->setMojangDownloadInfo(newLibraryInfo);
 
@@ -88,7 +88,7 @@ void ApplyLibraryOverrides::onLibraryOverrideDownloadFinished()
     downloadAuthlibInjector(root["extras"].toObject()["authlib-injector"].toString());
 }
 
-void ApplyLibraryOverrides::downloadAuthlibInjector(QUrl downloadUrl) {
+void ApplyLibraryOverrides::downloadAuthlibInjector(const QUrl &downloadUrl) {
     m_request = Net::Download::makeFile(downloadUrl, "authlib-injector.jar");
 
     m_task.reset(new NetJob("Download authlib-injector", APPLICATION->network()));

@@ -1,10 +1,7 @@
 #pragma once
-#include <QObject>
-#include <memory>
 
 #include "MinecraftProfileStep.h"
 #include "minecraft/auth/AuthStep.h"
-#include "net/Download.h"
 #include "net/NetJob.h"
 
 class MinecraftProfileStepEly : public MinecraftProfileStep {

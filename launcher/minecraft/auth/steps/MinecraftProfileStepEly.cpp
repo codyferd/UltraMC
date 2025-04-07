@@ -1,7 +1,5 @@
 #include "MinecraftProfileStepEly.h"
 
-#include <QNetworkRequest>
-
 #include "Application.h"
 #include "minecraft/auth/Parsers.h"
 #include "net/RawHeaderProxy.h"

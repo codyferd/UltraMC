@@ -34,13 +34,10 @@
  */
 
 #pragma once
-#include <QObject>
-#include <QTimer>
 
 #include "MSADeviceCodeStep.h"
 #include "minecraft/auth/AuthStep.h"
 #include "net/NetJob.h"
-#include "net/Upload.h"
 
 class ElyDeviceCodeStep : public MSADeviceCodeStep {
     Q_OBJECT

@@ -30,7 +30,7 @@ class ApplyLibraryOverrides : public LaunchStep {
     void executeTask() override;
     void downloadLibraryOverrideList();
     void onLibraryOverrideDownloadFinished();
-    void downloadAuthlibInjector(const QUrl downloadUrl);
+    void downloadAuthlibInjector(const QUrl &downloadUrl);
     bool canAbort() const override { return false; }
 
    private:
