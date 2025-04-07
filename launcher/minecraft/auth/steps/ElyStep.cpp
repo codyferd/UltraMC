@@ -132,7 +132,7 @@ void ElyStep::perform()
         m_oauth2.setModifyParametersFunction(
             [](QAbstractOAuth::Stage stage, QMultiMap<QString, QVariant>* map) { map->insert("prompt", "select_account"); });
 #else
-        oauth2.setModifyParametersFunction(
+        m_oauth2.setModifyParametersFunction(
             [](QAbstractOAuth::Stage stage, QMap<QString, QVariant>* map) { map->insert("prompt", "select_account"); });
 #endif
 
