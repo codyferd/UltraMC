@@ -1,6 +1,6 @@
 <p align="center">
 <picture>
-  <source media= srcset="/program_info/logo">
+  <source media= srcset="/program_info/logo.jpg">
 </picture>
 </p>
 
