@@ -35,4 +35,4 @@ All launcher code is sadly only available under the GPL-3.0-only license.
 
 PrismLauncher/ElyPrismLauncher assets are under the CC BY-SA 4.0 license.
 
-Assets made by UltaMC are licensed under the Universal Public Domain License, located at UPDL.txt
+Assets made by UltraMC are licensed under the Universal Public Domain License, located at UPDL.txt
